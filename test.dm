@@ -1,10 +1,12 @@
 import "main.dm" as Math;
+test = fn(actual, expected) {
+    if (actual == expected) .print(".") else .print(actual);
+};
 
-tsquare = Math.square(2);
-if tsquare == 4 .print(".") else .print(tsquare);
-
-texp = Math.exponentCurry(4)(2);
-if texp == 16 .print(".") else .print(texp);
-
-texp = Math.exponent(2, 3);
-if texp == 8 .print(".") else .print(text);
+.test(Math.square(2), 4);
+.test(Math.exponentCurry(4)(2), 16);
+.test(Math.exponent(2, 3), 8);
+.test(Math.abs(2), 2);
+.test(Math.abs(-2), 2);
+.test(Math.sqrt(49), 7);
+.test(Math.sqrt(144), 12);
