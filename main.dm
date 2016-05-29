@@ -1,5 +1,5 @@
-exponent = fn[exp] {
-    return = fn [x] {
+exponentCurry = fn(exp) {
+    return=fn(x) {
         i = 0;
         y = 1;
         while i < exp {
@@ -10,4 +10,8 @@ exponent = fn[exp] {
     };
 };
 
-square = exponent[2];
+exponent = fn(x, powerOf) {
+    return=exponentCurry(powerOf)(x);
+};
+
+square = exponentCurry(2);
